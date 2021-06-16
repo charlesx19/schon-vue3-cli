@@ -1,5 +1,7 @@
 # schon-vue
 
+06/16 Finish mainPromote component in main-content
+
 ## Project setup
 ```
 npm install
