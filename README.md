@@ -1,6 +1,7 @@
 # schon-vue
 
 06/16 Finish mainPromote component in main-content
+06/21 Finish mainPromote RWD
 
 ## Project setup
 ```

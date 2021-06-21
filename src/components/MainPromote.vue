@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <a href="#" class="col-6 main-banner">
+    <a href="#" class="col-12 col-md-6 main-banner">
       <div class="box">
         <div class="info">
           <p class="subtitle">furniture designs ideas</p>
@@ -9,10 +9,13 @@
           <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa delectus beatae incidunt maxime earum! Aut?</p>
           <p class="price">$ 79.00</p>
         </div>
+        <img src="~@/img/banner05.jpg" alt="products">
       </div>
     </a>
-    <a href="#" class="col-3 banner-01">
+    <a href="#" class="col-12 col-md-6 col-lg-3 p-0 pt-3 px-lg-3 pl-md-3 pt-md-0 banner-01">
       <div class="box">
+        <img src="~@/img/banner06.jpg" alt="products">
+
         <div class="title-box">
           <p class="subtitle">{{ products["banner01"]["subtitle"] }}</p>
           <p class="title">{{ products["banner01"]["title"] }}</p>
@@ -31,35 +34,39 @@
         </div>
       </div>
     </a>
-    <div class="col-3 banner-02-03">
+    <div class="col-12 col-lg-3 banner-02-03">
       <div class="row">
-        <a href="#" class="col-12 banner-02">
+        <a href="#" class="col-12 banner-02 pt-3 pt-lg-0">
           <div class="box">
-            <div class="title">{{ products["banner02"]["title"] }}</div>
-            <div class="star-count">
-              <i class="fas fa-star" v-for="count in products['banner02']['star']" :key="count"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">{{ "$ " + products["banner02"]["price"] }}</div>
-            <div class="shop-now">
-              shop now
+            <div class="info">
+              <div class="title">{{ products["banner02"]["title"] }}</div>
+              <div class="star-count">
+                <i class="fas fa-star" v-for="count in products['banner02']['star']" :key="count"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">{{ "$ " + products["banner02"]["price"] }}</div>
+              <div class="shop-now">
+                shop now
+              </div>              
             </div>
           </div>
         </a>
         <a href="#" class="col-12 banner-03">
           <div class="box">
-            <div class="title">{{ products["banner03"]["title"] }}</div>
-            <div class="star-count">
-              <i class="fas fa-star" v-for="count in products['banner03']['star']" :key="count"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <div class="price">{{ "$ " + products["banner03"]["price"] }}</div>
-            <div class="dPrice">{{ "$ " + products["banner03"]["dPrice"] }}</div>
-            <div class="shop-now">
-              hurry up
-              <span>
-                <i class="fas fa-chevron-right"></i>
-              </span>
+            <div class="info">
+              <div class="title">{{ products["banner03"]["title"] }}</div>
+              <div class="star-count">
+                <i class="fas fa-star" v-for="count in products['banner03']['star']" :key="count"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">{{ "$ " + products["banner03"]["price"] }}</div>
+              <div class="dPrice">{{ "$ " + products["banner03"]["dPrice"] }}</div>
+              <div class="shop-now">
+                hurry up
+                <span>
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </div>
             </div>
           </div>
         </a>
@@ -67,35 +74,39 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-4 banner-04-05">
+    <div class="col-12 col-lg-4 banner-04-05">
       <div class="row">
-        <a href="#" class="col-12 banner-04">
+        <a href="#" class="col-12 col-sm-6 col-lg-12 banner-04">
           <div class="box">
-            <div class="subtitle">{{ products["banner04"]["subtitle"] }}</div>
-            <div class="title">{{ products["banner04"]["title"] }}</div>
-            <div class="shop-now">
-              shop now
-              <span>
-                <i class="fas fa-chevron-right"></i>
-              </span>
+            <div class="info">
+              <div class="subtitle">{{ products["banner04"]["subtitle"] }}</div>
+              <div class="title">{{ products["banner04"]["title"] }}</div>
+              <div class="shop-now">
+                shop now
+                <span>
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </div>
             </div>
           </div>
         </a>
-        <a href="#" class="col-12 banner-05">
+        <a href="#" class="col-12 col-sm-6 col-lg-12 banner-05">
           <div class="box">
-            <div class="subtitle">{{ products["banner05"]["subtitle"] }}</div>
-            <div class="title">{{ products["banner05"]["title"] }}</div>
-            <div class="shop-now">
-              shop now
-              <span>
-                <i class="fas fa-chevron-right"></i>
-              </span>
+            <div class="info">
+              <div class="subtitle">{{ products["banner05"]["subtitle"] }}</div>
+              <div class="title">{{ products["banner05"]["title"] }}</div>
+              <div class="shop-now">
+                shop now
+                <span>
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </div>
             </div>
           </div>
         </a>
       </div>
     </div>
-    <div class="col-8 carousel-banner">
+    <div class="col-12 col-lg-8 carousel-banner">
       <div class="box">
         <div id="carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -270,19 +281,25 @@ export default {
     .main-banner {
       padding: 0;
       height: 563px;
+      width: auto;
       &:hover {
         p {
           text-decoration: none;
         }
       }
       .box {
+        position: relative;
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
         height: 100%;
+        width: 100%;
         padding: 76px 60px;
-        background-image: url("~@/img/banner05.jpg");
+        // background-image: url("~@/img/banner05.jpg");
+        // background-size: 100%, 100%;
+        // background-repeat: no-repeat;
         .info {
+          z-index: 100;
           * {
             margin: 0;
             padding: 0;
@@ -323,6 +340,13 @@ export default {
             color: #fff;
           }
         }
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
     .shop-now {
@@ -339,6 +363,9 @@ export default {
           animation: arrow-move 1s ease-out infinite;
         }
       }
+      * {
+        position: relative;
+      }
       .row {
         flex-direction: column;
       }
@@ -346,7 +373,7 @@ export default {
         position: relative;
         padding: 30px 25px;
         height: 100%;
-        background-image: url("~@/img/banner06.jpg");
+        // background-image: url("~@/img/banner06.jpg");
         .title-box {
           .subtitle {
           font-size: 14px;
@@ -409,6 +436,15 @@ export default {
             }
           }
         }
+        img {
+          position: absolute;
+          display: block;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          mix-blend-mode: multiply;
+        }
       }
     }
     .banner-02-03 {
@@ -440,6 +476,17 @@ export default {
           color: #c8a760;
         }
       }
+      // // Small devices (landscape phones, 576px and up)
+      // @media (min-width: 576px) { ... }
+
+      // // Medium devices (tablets, 768px and up)
+      // @media (min-width: 768px) { ... }
+
+      // // Large devices (desktops, 992px and up)
+      // @media (min-width: 992px) { ... }
+
+      // // Extra large devices (large desktops, 1200px and up)
+      // @media (min-width: 1200px) { ... }
       .banner-02 {
         height: 50%;
         padding-bottom: 10px;
@@ -459,7 +506,7 @@ export default {
             color: @text-light-gray;
           }
           .star-count {
-            margin-bottom: 70px;
+            margin-bottom: 25%;
           }
           .price {
             color: #991015;
@@ -476,6 +523,32 @@ export default {
             transition: .5s all ease-in-out;
           }
         }
+        @media (max-width: 1200px) {
+          .box {
+            background-size: 60%;
+          }          
+        }        
+        @media (max-width: 992px) {
+          .box {
+            padding: 5% 10%;
+            background-position: 25% bottom;
+            background-size: 35%;
+            .star-count {
+              margin-bottom: 12%;
+            }               
+          }          
+        }
+        @media (max-width: 767px) {
+          .box {
+            background-size: 40%;
+            .title {
+              font-size: 30px;
+            }
+            .star-count {
+              margin-bottom: 3%;
+            }       
+          }
+        }        
       }
       .banner-03 {
         height: 50%;
@@ -490,7 +563,7 @@ export default {
           background-position: right;
           text-align: left;
           .title {
-            margin-bottom: 45px;
+            margin-bottom: 25%;
             color: #2c3e66;
           }
           .price {
@@ -522,6 +595,28 @@ export default {
             }
           }
         }
+        @media (max-width: 1200px) {
+          .box {
+            background-size: 55%;
+          }          
+        }          
+        @media (max-width: 992px) {
+          .box {
+            padding: 5% 10%;
+            background-size: inherit;
+            .title {
+              margin-bottom: 10%;
+            }       
+          }
+        }
+        @media (max-width: 767px) {
+          .box {
+            .title {
+              margin-bottom: 3%;
+              font-size: 30px;
+            }
+          }
+        }              
       }
     }
     .banner-04-05 {
@@ -566,7 +661,7 @@ export default {
           background-blend-mode: multiply;
           color: #fff;
           .title {
-            margin-bottom: 60px;
+            margin-bottom: 20%;
           }
           .shop-now {
             margin-left: auto;
@@ -585,6 +680,26 @@ export default {
               }
             }
           }
+        }
+      }
+      @media (max-width: 992px) {
+        .banner-04 {
+          padding-right: 10px;
+        }
+      }      
+      @media (max-width: 768px) {
+        .banner-04 {
+          height: 50%;
+          .box {
+            .title {
+              margin-bottom: 23%;
+            }
+          }
+        }
+      }
+      @media (max-width: 576px) {
+        .banner-04 {
+          padding-right: 15px;
         }
       }
       .banner-05 {
@@ -607,7 +722,7 @@ export default {
           }
           .title {
             color: #535353;
-            margin-bottom: 200px;
+            margin-bottom: 60%;
           }
           .shop-now {
             margin-left: auto;
@@ -627,6 +742,71 @@ export default {
             }
           }          
         }
+      }
+      @media (max-width: 1200px) {
+        .banner-05 {
+          .box {
+            .title {
+              width: 100%;
+              margin-bottom: 70%;
+            }
+          }
+        }
+      }      
+      @media (max-width: 992px) {
+        .banner-05 {
+          padding-left: 10px;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          .box {
+            background-size: 74%;
+            background-position: -80% bottom;            
+            .title {
+              width: 60%;
+              margin: 10px 0 6% auto;
+            }
+          }
+        }
+      }
+      @media (max-width: 767px) {
+        .banner-05 {
+          height: 50%;
+          .box {
+            background-size: 65%;
+            background-position: -48% bottom;
+            .title {
+              width: 85%;
+              margin-bottom: 18%;
+            }
+          }
+        }
+      }
+      @media (max-width: 576px) {
+        .banner-05 {
+          padding-top: 10px;
+        }
+      }
+      @media (max-width: 415px) {
+        .banner-05 {
+          .box {
+            .title {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 992px) {
+      .banner-04-05 {
+        height: 230px;
+        .banner-04, .banner-05 {
+          height: 100%;
+        }
+      }
+    }
+    @media (max-width: 576px) {
+      .banner-04-05 {
+        height: auto;
       }
     }
     .carousel-banner {
@@ -663,16 +843,19 @@ export default {
           }
           .carousel-inner {
             height: 100%;
+            .carousel-item {
+              height: 100%;
+            }
             .inner-box {
               position: relative;
               display: block;
-              height: 579px;
+              height: 100%;
               padding: 8%;
               img {
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: auto;
+                width: 100%;
                 height: 100%;
                 mix-blend-mode: multiply;
               }
@@ -701,12 +884,13 @@ export default {
                 font-size: 12px;
               }
               .carousel-caption {
-                    position: absolute;
-                    padding: 8% 8%;
-                    width: 100%;
-                    left: 0;
-                    top: 0;
-                    z-index: 10;
+                position: absolute;
+                padding: 8% 8%;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 10;
               }
               &.item01 {
                 .carousel-caption {
@@ -754,8 +938,23 @@ export default {
         }
       }
     }
-
+    @media (max-width: 992px) {
+      .carousel-banner {
+        padding-left: 0;
+        padding-top: 10px;
+        height: 590px;
+      }
+    }
+    @media (max-width: 767px) {
+      .carousel-banner {
+        height: 400px;
+      }
+    }    
+    @media (max-width: 539px) {
+      .carousel-banner {
+        height: 340px;
+      }
+    }      
   }
-
   
 </style>
