@@ -1,0 +1,492 @@
+<template>
+  <div id="carouselProducts" class="row">
+    <div class="col-12 controller">
+      <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+      <div class="row no-gutters">
+        <div class="col-8 filter-title">
+          <span @click="featuredShow" :class="{active: featured}">featured</span>
+          <span @click="latestShow" :class="{active: latest}">latest</span>
+          <span @click="bestSellerShow" :class="{active: bestSeller}">best seller</span>
+        </div>
+        <div class="col-4">
+          <div class="controller-box">
+            <div class="box">
+              <a :href="'#' + controller" class="prev" role="button" data-slide="prev">
+                <i class="fas fa-angle-left"></i>
+              </a>
+              <a :href="'#' + controller" class="next" role="button" data-slide="next">
+                <i class="fas fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 featuredProducts items" v-show="featured">
+      <div id="featuredCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <a href="#" class="item col-3" v-for="item in carouselProducts.featuredRow01" :key="item['name']">
+                <div class="box">
+                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <a href="#" class="item col-3" v-for="item in carouselProducts.featuredRow02" :key="item['name']">
+                <div class="box">
+                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                          
+            </div>
+          </div>          
+        </div>
+      </div>      
+    </div>
+    <div class="col-12 latestProducts items" v-show="latest">
+      <div id="latestCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <a href="#" class="item col-3" v-for="item in carouselProducts.latestRow01" :key="item['name']">
+                <div class="box">
+                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <a href="#" class="item col-3" v-for="item in carouselProducts.latestRow02" :key="item['name']">
+                <div class="box">
+                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                          
+            </div>
+          </div>          
+        </div>
+      </div>      
+    </div>
+    <div class="col-12 bestSellerProducts items" v-show="bestSeller">
+      <div id="bestSellerCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <a href="#" class="item col-3" v-for="item in carouselProducts.bestSellerRow01" :key="item['name']">
+                <div class="box">
+                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <a href="#" class="item col-3" v-for="item in carouselProducts.bestSellerRow02" :key="item['name']">
+                <div class="box">
+                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                          
+            </div>
+          </div>          
+        </div>
+      </div>      
+    </div>        
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'CarouselProducts',
+  components: {
+  },
+  data(){
+    return {
+      carouselProducts:{
+        featuredRow01:[
+          {
+            starCount: 3,
+            title: "bombi chair",
+            price: "399.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,chair"
+          },
+          {
+            starCount: 0,
+            title: "marvelous modern 3 seater",
+            price: "599.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,table"
+          },
+          {
+            starCount: 3,
+            title: "chair with armrests",
+            price: "200.00",
+            discount: 15,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,wood"
+          },
+          {
+            starCount: 0,
+            title: "product title-04",
+            price: "699.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,fashion"
+          },                                                                    
+        ],
+        featuredRow02:[
+          {
+            starCount: 3,
+            title: "product title-05",
+            price: "399.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,desk"
+          },
+          {
+            starCount: 0,
+            title: "product title-06",
+            price: "599.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,gold"
+          },
+          {
+            starCount: 3,
+            title: "product title-07",
+            price: "200.00",
+            discount: 15,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,beauty"
+          },
+          {
+            starCount: 0,
+            title: "product title-08",
+            price: "699.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,shiny"
+          },                                                                    
+        ],
+        latestRow01:[
+          {
+            starCount: 3,
+            title: "latest product-01",
+            price: "399.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,chair"
+          },
+          {
+            starCount: 0,
+            title: "latest product-02",
+            price: "599.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,table"
+          },
+          {
+            starCount: 3,
+            title: "latest product-03",
+            price: "200.00",
+            discount: 15,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,wood"
+          },
+          {
+            starCount: 0,
+            title: "latest product-04",
+            price: "699.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,fashion"
+          },                                                                    
+        ],
+        latestRow02:[
+          {
+            starCount: 3,
+            title: "latest product-05",
+            price: "399.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,desk"
+          },
+          {
+            starCount: 0,
+            title: "latest product-06",
+            price: "599.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,gold"
+          },
+          {
+            starCount: 3,
+            title: "latest product-07",
+            price: "200.00",
+            discount: 15,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,beauty"
+          },
+          {
+            starCount: 0,
+            title: "latest product-08",
+            price: "699.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?design,shiny"
+          },                                                                    
+        ],  
+        bestSellerRow01:[
+          {
+            starCount: 3,
+            title: "bestSeller product-01",
+            price: "399.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,chair"
+          },
+          {
+            starCount: 0,
+            title: "bestSeller product-02",
+            price: "599.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,table"
+          },
+          {
+            starCount: 3,
+            title: "bestSeller product-03",
+            price: "200.00",
+            discount: 15,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,wood"
+          },
+          {
+            starCount: 0,
+            title: "bestSeller product-04",
+            price: "699.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,fashion"
+          },                                                                    
+        ],
+        bestSellerRow02:[
+          {
+            starCount: 3,
+            title: "bestSeller product-05",
+            price: "399.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,desk"
+          },
+          {
+            starCount: 0,
+            title: "bestSeller product-06",
+            price: "599.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,gold"
+          },
+          {
+            starCount: 3,
+            title: "bestSeller product-07",
+            price: "200.00",
+            discount: 15,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,beauty"
+          },
+          {
+            starCount: 0,
+            title: "bestSeller product-08",
+            price: "699.00",
+            discount: 0,
+            url: "#",
+            bgImg: "https://source.unsplash.com/300x300/?furniture,shiny"
+          },                                                                    
+        ],                        
+      },
+      
+      controller: "featuredCarousel",
+      featured: true,
+      latest: false,
+      bestSeller: false,
+    };
+  },
+  methods: {
+    featuredShow(){
+      this.featured = true;
+      this.latest = false;
+      this.bestSeller = false;
+      this.controller = "featuredCarousel";
+    },
+    latestShow(){
+      this.featured = false;
+      this.latest = true;
+      this.bestSeller = false;
+      this.controller = "latestCarousel";
+    },
+    bestSellerShow(){
+      this.featured = false;
+      this.latest = false;
+      this.bestSeller = true;
+      this.controller = "bestSellerCarousel";
+    },
+  },
+  mounted(){
+  },
+}
+</script>
+
+<style lang="less" scope>
+  @import '@/less/main.less';
+
+  #carouselProducts {
+    padding-top: 1.5rem;
+    .controller {
+      padding: 0;
+      padding-bottom: 1.5rem;
+      .filter-title {
+        padding: 0;
+        span {
+          font-size: 16px;
+          font-weight: 700;
+          color: #838182;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:nth-child(1) {
+            padding-right: 15px;
+          }
+          &:nth-child(2) {
+            padding: 0 15px;
+            border-left: 1px solid #a8a8a8;
+            border-right: 1px solid #a8a8a8;
+          }
+          &:nth-child(3) {
+            padding-left: 15px;
+          }
+          &.active {
+            color: #3a3a3a;
+          }                  
+        }
+      }
+      .controller-box {
+        text-align: right;
+        .box {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-left: auto;
+          width: 80px;
+          border-radius: 20px;
+          padding: 5px;
+          background: #eee;
+          .prev, .next {
+            width: 30px;
+            height: 30px;
+            line-height: 29px;
+            border-radius: 50%;
+            text-align: center;
+            background: #fff;
+            color: @main-gray;
+          }
+        }
+      }
+    }
+    .items {
+      padding: 0;
+      .item {
+        min-height: 260px;
+      }
+      .box {
+        img {
+
+        }
+        .info {
+          padding: 0 5%;
+          .star-count {
+            svg {
+              margin: 0 1px;
+              width: 0.7rem;
+              color: #c8a760;
+            }
+            &.hide {
+              opacity: 0;
+            }
+          }
+          .title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #747474;
+          }
+          .price {
+            font-size: 19px;
+            font-weight: 700;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+  
+</style>

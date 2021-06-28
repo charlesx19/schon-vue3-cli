@@ -2,6 +2,7 @@
 
 06/16 Finish mainPromote component in main-content
 06/21 Finish mainPromote RWD
+06/28 Finish carouselProducts component in main-content
 
 ## Project setup
 ```

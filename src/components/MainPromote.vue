@@ -35,7 +35,7 @@
       </div>
     </a>
     <div class="col-12 col-lg-3 banner-02-03">
-      <div class="row">
+      <div class="row no-gutters">
         <a href="#" class="col-12 banner-02 pt-3 pt-lg-0">
           <div class="box">
             <div class="info">
@@ -75,7 +75,7 @@
   </div>
   <div class="row">
     <div class="col-12 col-lg-4 banner-04-05">
-      <div class="row">
+      <div class="row no-gutters">
         <a href="#" class="col-12 col-sm-6 col-lg-12 banner-04">
           <div class="box">
             <div class="info">
@@ -699,7 +699,7 @@ export default {
       }
       @media (max-width: 576px) {
         .banner-04 {
-          padding-right: 15px;
+          padding-right: 0;
         }
       }
       .banner-05 {
@@ -784,6 +784,7 @@ export default {
       @media (max-width: 576px) {
         .banner-05 {
           padding-top: 10px;
+          padding-left: 0;
         }
       }
       @media (max-width: 415px) {

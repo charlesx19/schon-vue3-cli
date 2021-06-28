@@ -4,18 +4,41 @@
       <router-link class="test" to="/">Home</router-link> |
       <router-link class="test" to="/about">About</router-link>
     </div> -->
+    <div id="nav-mobile" class="row no-gutters d-flex d-md-none">
+      <div class="col-3 item home">
+        <div class="box">
+          <i class="fas fa-home"></i>
+        </div>
+      </div>
+      <div class="col-3 item shopping-car">
+        <div class="box">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+      </div>
+      <div class="col-3 item account">
+        <div class="box">
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <div class="col-3 item menu">
+        <div class="box">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-lg-3">
           <div class="logo-container">
             <a href="#">
               <img src="@/img/logo.svg" alt="logo">
             </a>
           </div>
         </div>
-        <div class="col-9">
+        <div class="col-lg-9 d-none d-md-block">
           <div class="row">
-            <div id="nav" class="col-8">
+            <div id="nav" class="col-12 col-md-8">
               <ul>
                 <li><a href="#">home</a></li>
                 <li class="down-arrow">
@@ -29,7 +52,7 @@
                 <li><a href="#">contact</a></li>
               </ul>
             </div>
-            <div class="other col-4">
+            <div class="other col-12 col-md-4">
               <div class="search">
                 <i class="fas fa-search"></i>
               </div>
@@ -87,6 +110,47 @@ export default {
       width: 45%;
       img {
         width: 100%;
+      }
+    }
+    @media (max-width: 992px) {
+      .logo-container {
+        width: 100%;
+        text-align: center;
+        img {
+          margin-bottom: 3%;
+          width: 150px;
+          height: auto;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      .logo-container {
+        img {
+          margin-bottom: 0;
+        }
+      }
+    }
+    #nav-mobile {
+      position: fixed;
+      bottom: -2px;
+      left: 0;
+      width: 100vw;
+      height: 60px;
+      text-align: center;
+      background: #fff;
+      z-index: 999;
+      .item {
+        height: 100%;
+        .box {
+          height: 100%;
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          line-height: 3.5rem;
+          box-shadow: inset 0px 3px 3px rgba(0,0,0,.1);
+          background: #d8d8d8;
+          color: @main-gray;
+        }
       }
     }
     #nav {
@@ -180,5 +244,9 @@ export default {
       }
     }
   }
-  
+  @media (max-width: 767px) {
+    #header {
+      padding: 4% 0;
+    }
+  }
 </style>

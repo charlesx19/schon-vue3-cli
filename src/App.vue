@@ -99,5 +99,25 @@ export default {
       }
     }
   }
+  @media (max-width: 992px) {
+    .header-top {
+      .header-top-row {
+        a {
+          padding: 10px 4px;
+        }
+        .contact-info { 
+          padding: 0;
+        }
+        .order-info {
+          padding: 0;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .header-top {
+      display: none;
+    }
+  }
 
 </style>
