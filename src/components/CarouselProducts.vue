@@ -1,5 +1,5 @@
 <template>
-  <div id="carouselProducts" class="row">
+  <div id="carouselProducts" class="row d-none d-lg-flex">
     <div class="col-12 controller">
       <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -16,7 +16,7 @@
           <span @click="bestSellerShow" :class="{active: bestSeller}">best seller</span>
         </div>
         <div class="col-4">
-          <div class="controller-box">
+          <div class="controller-box d-none d-lg-block">
             <div class="box">
               <a :href="'#' + controller" class="prev" role="button" data-slide="prev">
                 <i class="fas fa-angle-left"></i>
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 featuredProducts items" v-show="featured">
+    <div class="col-12 featuredProducts items " v-show="featured">
       <div id="featuredCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -68,7 +68,7 @@
           </div>          
         </div>
       </div>      
-    </div>
+    </div>  
     <div class="col-12 latestProducts items" v-show="latest">
       <div id="latestCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner">
@@ -149,6 +149,162 @@
         </div>
       </div>      
     </div>        
+  </div>
+  <!-- 行動版的carousel，瀏覽器寬度低於992時觸發顯示，並關閉原始版的carousel -->
+  <div id="carouselProductsMobile" class="row d-flex d-lg-none">
+    <div class="col-12 controller">
+      <div class="row no-gutters">
+        <div class="col-8 filter-title">
+          <span @click="featuredShow" :class="{active: featured}">featured</span>
+          <span @click="latestShow" :class="{active: latest}">latest</span>
+          <span @click="bestSellerShow" :class="{active: bestSeller}">best seller</span>
+        </div>
+        <div class="col-4">
+          <div class="controller-box">
+            <div class="box">
+               <a :href="'#' + controller + 'Mobile'" class="prev" role="button" data-slide="prev">
+                <i class="fas fa-angle-left"></i>
+              </a>
+              <a :href="'#' + controller + 'Mobile'" class="next" role="button" data-slide="next">
+                <i class="fas fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 featuredProductsMobile items " v-show="featured">
+      <div id="featuredCarouselMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item" v-for="item in carouselProducts.featuredRow01" :key="item['name']">
+            <div class="row">
+              <a href="#" class="item col-12">
+                <div class="box">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>
+          <div class="carousel-item" v-for="item in carouselProducts.featuredRow02" :key="item['name']">
+            <div class="row">
+              <a href="#" class="item col-12">
+                <div class="box">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>                
+        </div>
+      </div>      
+    </div>      
+    <div class="col-12 latestProductsMobile items " v-show="latest">
+      <div id="latestCarouselMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item" v-for="item in carouselProducts.latestRow01" :key="item['name']">
+            <div class="row">
+              <a href="#" class="item col-12">
+                <div class="box">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>
+          <div class="carousel-item" v-for="item in carouselProducts.latestRow02" :key="item['name']">
+            <div class="row">
+              <a href="#" class="item col-12">
+                <div class="box">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>                
+        </div>
+      </div>      
+    </div>  
+    <div class="col-12 bestSellerProductsMobile items " v-show="bestSeller">
+      <div id="bestSellerCarouselMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item" v-for="item in carouselProducts.bestSellerRow01" :key="item['name']">
+            <div class="row">
+              <a href="#" class="item col-12">
+                <div class="box">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>
+          <div class="carousel-item" v-for="item in carouselProducts.bestSellerRow02" :key="item['name']">
+            <div class="row">
+              <a href="#" class="item col-12">
+                <div class="box">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="info">
+                    <div class="star-count" :class="{ 'hide': item.starCount == 0}">
+                      <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div class="title">{{ item["title"] }}</div>
+                    <div class="price">{{ "$ " + item["price"] }}</div>
+                  </div>               
+                </div>
+              </a>                                                             
+            </div>
+          </div>                
+        </div>
+      </div>      
+    </div>          
   </div>
 </template>
 
@@ -394,6 +550,13 @@ export default {
     },
   },
   mounted(){
+    let featuredTarget = document.querySelector('.featuredProductsMobile .carousel-item');
+    let latestTarget = document.querySelector('.latestProductsMobile .carousel-item');
+    let bestSellerTarget = document.querySelector('.bestSellerProductsMobile .carousel-item');
+
+    featuredTarget.classList.add('active');
+    latestTarget.classList.add('active');
+    bestSellerTarget.classList.add('active');
   },
 }
 </script>
@@ -401,7 +564,7 @@ export default {
 <style lang="less" scope>
   @import '@/less/main.less';
 
-  #carouselProducts {
+  #carouselProducts, #carouselProductsMobile {
     padding-top: 1.5rem;
     .controller {
       padding: 0;
@@ -484,6 +647,20 @@ export default {
             font-weight: 700;
             color: #333;
           }
+        }
+      }
+      .imgBox {
+        height: 390px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      @media (max-width: 992px) {
+        .item {
+          min-height: 280px;
+          padding: 0 8px;
         }
       }
     }
