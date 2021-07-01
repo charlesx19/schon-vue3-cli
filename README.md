@@ -4,6 +4,7 @@
 06/21 Finish mainPromote RWD
 06/28 Finish carouselProducts component in main-content
 07/01 Finish carouselProducts RWD design
+      Fix below 576px, filter-title in carouselProducts display is not normal
 
 ## Project setup
 ```

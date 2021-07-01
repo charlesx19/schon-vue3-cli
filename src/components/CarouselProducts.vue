@@ -154,13 +154,13 @@
   <div id="carouselProductsMobile" class="row d-flex d-lg-none">
     <div class="col-12 controller">
       <div class="row no-gutters">
-        <div class="col-8 filter-title">
+        <div class="col-12 col-sm-8 filter-title">
           <span @click="featuredShow" :class="{active: featured}">featured</span>
           <span @click="latestShow" :class="{active: latest}">latest</span>
           <span @click="bestSellerShow" :class="{active: bestSeller}">best seller</span>
         </div>
-        <div class="col-4">
-          <div class="controller-box">
+        <div class="col-4 controller-box">
+          <div class="">
             <div class="box">
                <a :href="'#' + controller + 'Mobile'" class="prev" role="button" data-slide="prev">
                 <i class="fas fa-angle-left"></i>
@@ -613,6 +613,19 @@ export default {
             background: #fff;
             color: @main-gray;
           }
+        }
+      }
+    }
+    // 低於576px將控制列隱藏，將filter-title置中顯示，user使用手指左右滑動瀏覽產品
+    @media (max-width: 576px) {
+      .controller {
+        .filter-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .controller-box {
+          display: none;
         }
       }
     }
