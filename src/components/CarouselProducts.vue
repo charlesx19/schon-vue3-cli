@@ -36,7 +36,17 @@
             <div class="row">
               <a href="#" class="item col-3" v-for="item in carouselProducts.featuredRow01" :key="item['name']">
                 <div class="box">
-                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>
+                  </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
                       <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
@@ -53,7 +63,17 @@
             <div class="row">
               <a href="#" class="item col-3" v-for="item in carouselProducts.featuredRow02" :key="item['name']">
                 <div class="box">
-                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
+                  </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
                       <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
@@ -76,7 +96,17 @@
             <div class="row">
               <a href="#" class="item col-3" v-for="item in carouselProducts.latestRow01" :key="item['name']">
                 <div class="box">
-                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="imgBox">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                  </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
                       <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
@@ -93,7 +123,17 @@
             <div class="row">
               <a href="#" class="item col-3" v-for="item in carouselProducts.latestRow02" :key="item['name']">
                 <div class="box">
-                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="imgBox">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                  </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
                       <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
@@ -116,7 +156,17 @@
             <div class="row">
               <a href="#" class="item col-3" v-for="item in carouselProducts.bestSellerRow01" :key="item['name']">
                 <div class="box">
-                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
+                  </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
                       <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
@@ -133,7 +183,17 @@
             <div class="row">
               <a href="#" class="item col-3" v-for="item in carouselProducts.bestSellerRow02" :key="item['name']">
                 <div class="box">
-                  <img :src="item.bgImg" class="d-block w-100" alt="...">
+                  <div class="imgBox">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
+                  </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
                       <i v-for="stars in item.starCount" :key="stars" class="fas fa-star"></i>
@@ -181,7 +241,15 @@
               <a href="#" class="item col-12">
                 <div class="box">
                   <div class="imgBox">
-                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
@@ -200,7 +268,15 @@
               <a href="#" class="item col-12">
                 <div class="box">
                   <div class="imgBox">
-                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
@@ -225,7 +301,15 @@
               <a href="#" class="item col-12">
                 <div class="box">
                   <div class="imgBox">
-                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
@@ -244,7 +328,15 @@
               <a href="#" class="item col-12">
                 <div class="box">
                   <div class="imgBox">
-                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
@@ -269,7 +361,15 @@
               <a href="#" class="item col-12">
                 <div class="box">
                   <div class="imgBox">
-                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
@@ -288,7 +388,15 @@
               <a href="#" class="item col-12">
                 <div class="box">
                   <div class="imgBox">
-                    <img :src="item.bgImg" class="d-block w-100" alt="...">
+                    <img :src="item.bgImg" class="d-block" alt="...">
+                    <div class="quick-action-box row no-gutter">
+                      <div class="add-to-cart col-6">
+                        <i class="fas fa-shopping-bag"></i>
+                      </div>
+                      <div class="add-to-favorite col-6">
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="info">
                     <div class="star-count" :class="{ 'hide': item.starCount == 0}">
@@ -324,7 +432,7 @@ export default {
             price: "399.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,chair"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,chair"
           },
           {
             starCount: 0,
@@ -332,7 +440,7 @@ export default {
             price: "599.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,table"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,table"
           },
           {
             starCount: 3,
@@ -340,7 +448,7 @@ export default {
             price: "200.00",
             discount: 15,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,wood"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,wood"
           },
           {
             starCount: 0,
@@ -348,7 +456,7 @@ export default {
             price: "699.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,fashion"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,fashion"
           },                                                                    
         ],
         featuredRow02:[
@@ -358,7 +466,7 @@ export default {
             price: "399.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,desk"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,desk"
           },
           {
             starCount: 0,
@@ -366,7 +474,7 @@ export default {
             price: "599.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,gold"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,gold"
           },
           {
             starCount: 3,
@@ -374,7 +482,7 @@ export default {
             price: "200.00",
             discount: 15,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,beauty"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,beauty"
           },
           {
             starCount: 0,
@@ -382,7 +490,7 @@ export default {
             price: "699.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,shiny"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,shiny"
           },                                                                    
         ],
         latestRow01:[
@@ -392,7 +500,7 @@ export default {
             price: "399.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,chair"
+            bgImg: "https://source.unsplash.com/600x300/?design,chair"
           },
           {
             starCount: 0,
@@ -400,7 +508,7 @@ export default {
             price: "599.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,table"
+            bgImg: "https://source.unsplash.com/600x300/?design,table"
           },
           {
             starCount: 3,
@@ -408,7 +516,7 @@ export default {
             price: "200.00",
             discount: 15,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,wood"
+            bgImg: "https://source.unsplash.com/600x300/?design,wood"
           },
           {
             starCount: 0,
@@ -416,7 +524,7 @@ export default {
             price: "699.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,fashion"
+            bgImg: "https://source.unsplash.com/600x300/?design,fashion"
           },                                                                    
         ],
         latestRow02:[
@@ -426,7 +534,7 @@ export default {
             price: "399.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,desk"
+            bgImg: "https://source.unsplash.com/600x300/?design,desk"
           },
           {
             starCount: 0,
@@ -434,7 +542,7 @@ export default {
             price: "599.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,gold"
+            bgImg: "https://source.unsplash.com/600x300/?design,gold"
           },
           {
             starCount: 3,
@@ -442,7 +550,7 @@ export default {
             price: "200.00",
             discount: 15,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,beauty"
+            bgImg: "https://source.unsplash.com/600x300/?design,beauty"
           },
           {
             starCount: 0,
@@ -450,7 +558,7 @@ export default {
             price: "699.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?design,shiny"
+            bgImg: "https://source.unsplash.com/600x300/?design,shiny"
           },                                                                    
         ],  
         bestSellerRow01:[
@@ -460,7 +568,7 @@ export default {
             price: "399.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,chair"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,chair"
           },
           {
             starCount: 0,
@@ -468,7 +576,7 @@ export default {
             price: "599.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,table"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,table"
           },
           {
             starCount: 3,
@@ -476,7 +584,7 @@ export default {
             price: "200.00",
             discount: 15,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,wood"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,wood"
           },
           {
             starCount: 0,
@@ -484,7 +592,7 @@ export default {
             price: "699.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,fashion"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,fashion"
           },                                                                    
         ],
         bestSellerRow02:[
@@ -494,7 +602,7 @@ export default {
             price: "399.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,desk"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,desk"
           },
           {
             starCount: 0,
@@ -502,7 +610,7 @@ export default {
             price: "599.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,gold"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,gold"
           },
           {
             starCount: 3,
@@ -510,7 +618,7 @@ export default {
             price: "200.00",
             discount: 15,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,beauty"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,beauty"
           },
           {
             starCount: 0,
@@ -518,7 +626,7 @@ export default {
             price: "699.00",
             discount: 0,
             url: "#",
-            bgImg: "https://source.unsplash.com/300x300/?furniture,shiny"
+            bgImg: "https://source.unsplash.com/600x300/?furniture,shiny"
           },                                                                    
         ],                        
       },
@@ -635,8 +743,38 @@ export default {
         min-height: 260px;
       }
       .box {
+        .imgBox {
+          position: relative;
+          width: 100%;
+          height: 217px;
+          overflow: hidden;
+          .quick-action-box {
+            position: absolute;
+            margin: 0;
+            width: 100%;
+            height: 40px;
+            bottom: 0;
+            left: 0;
+            transform: translateY(110%);
+            transition: .3s all ease-in-out;
+            .add-to-cart, .add-to-favorite {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              text-align: center;
+              font-size: 14px;
+              border: 1px solid #eee;
+              background: #fff;
+              color: #8a8a8a;
+            }
+          }
+        }
         img {
-
+          position: relative;
+          left: -50%;
+          height: 100%;
+          width: auto
         }
         .info {
           padding: 0 5%;
@@ -661,22 +799,52 @@ export default {
             color: #333;
           }
         }
-      }
-      .imgBox {
-        height: 390px;
-        overflow: hidden;
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-      @media (max-width: 992px) {
-        .item {
-          min-height: 280px;
-          padding: 0 8px;
+        &:hover {
+          .quick-action-box {
+            transform: translateY(0%);
+          }
         }
       }
     }
   }
-  
+  #carouselProductsMobile {
+    .items {
+      .box {
+        .imgBox {
+          display: flex;
+          justify-content: center;
+          height: 290px;
+          overflow: hidden;
+          .quick-action-box {
+            height: 30px;
+            transform: translateY(0);
+          }
+          img {
+            position: relative;
+            left: 0;
+            width: auto;
+            height: 100%;
+          }
+        }
+        @media (max-width: 992px) {
+          .item {
+            min-height: 280px;
+            padding: 0 8px;
+          }
+          .imgBox {
+            img {
+              width: 100%;
+            }
+          }          
+        }
+        @media (max-width: 767px) {
+          .imgBox {
+            img {
+              width: auto;
+            }
+          }     
+        }       
+      }    
+    }
+  }
 </style>

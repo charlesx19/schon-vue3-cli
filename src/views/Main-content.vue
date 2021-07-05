@@ -26,7 +26,10 @@ export default {
 </script>
 
 <style lang="less">
-@import '@/less/main.less';
+  @import '@/less/main.less';
+  #main-content {
+    padding-bottom: 100px;
+  }
 
 
 </style>
