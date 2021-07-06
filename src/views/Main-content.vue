@@ -3,6 +3,7 @@
     <div class="container">
       <MainPromote></MainPromote>
       <CarouselProducts></CarouselProducts>
+      <Brands></Brands>
     </div>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import MainPromote from '@/components/MainPromote.vue'
 import CarouselProducts from '@/components/CarouselProducts.vue'
+import Brands from '@/components/Brands.vue'
 
 export default {
   name: 'Main-content',
   components: {
     MainPromote,
-    CarouselProducts
+    CarouselProducts,
+    Brands
   },
   data(){
     return {
