@@ -7,6 +7,8 @@
       Fix below 576px, filter-title in carouselProducts display is not normal
 07/05 Add hover effect in carouselProducts, fix some img size problem
 07/06 Add Brands component in main-content   
+07/09 Add OtherProducts component in main-content
+      Finish OtherProducts RWD
 
 ## Project setup
 ```
