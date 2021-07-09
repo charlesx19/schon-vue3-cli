@@ -9,6 +9,7 @@
 07/06 Add Brands component in main-content   
 07/09 Add OtherProducts component in main-content
       Finish OtherProducts RWD
+      Finish Brands RWD
 
 ## Project setup
 ```

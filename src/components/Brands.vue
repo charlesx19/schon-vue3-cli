@@ -4,7 +4,7 @@
       brands
       <span>furniture</span>
     </div>
-    <div class="col-12 p-0">
+    <div class="col-12 d-none d-md-block carouselNormal p-0">
       <div class="row">
         <div class="col-1 controller-prev" href="#brandsCarousel" role="button" data-slide="prev">
           <i class="fas fa-angle-left"></i>
@@ -40,6 +40,52 @@
         </div>
       </div>
     </div>
+    <div class="col-12 d-block d-md-none carouselMobile p-0">
+      <div class="row m-0">
+        <div class="col-1 controller-prev" href="#brandsCarouselMobile" role="button" data-slide="prev">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <div class="col-10">
+          <div id="brandsCarouselMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-6 item"><img src="@/img/brand-01.jpg" alt="brand"></div>
+                  <div class="col-6 item"><img src="@/img/brand-02.jpg" alt="brand"></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-6 item"><img src="@/img/brand-03.jpg" alt="brand"></div>
+                  <div class="col-6 item"><img src="@/img/brand-04.jpg" alt="brand"></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-6 item"><img src="@/img/brand-05.jpg" alt="brand"></div>
+                  <div class="col-6 item"><img src="@/img/brand-06.jpg" alt="brand"></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-6 item"><img src="@/img/brand-07.jpg" alt="brand"></div>
+                  <div class="col-6 item"><img src="@/img/brand-08.jpg" alt="brand"></div>
+                </div>
+              </div>  
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-6 item"><img src="@/img/brand-09.jpg" alt="brand"></div>
+                  <div class="col-6 item"><img src="@/img/brand-01.jpg" alt="brand"></div>
+                </div>
+              </div>                                        
+            </div>
+          </div>          
+        </div>
+        <div class="col-1 controller-next" href="#brandsCarouselMobile" role="button" data-slide="next">
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+    </div>    
   </div>
 </template>
 
@@ -94,6 +140,24 @@ export default {
           width: 80%;
           height: auto;
         }
+      }
+    }
+    #brandsCarouselMobile {
+      .item {
+        padding: 0 2rem;
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+        img {
+          width: 100%;
+          height: auto;
+          max-height: 100px;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      .title {
+        text-align: center;
       }
     }
   }
