@@ -10,6 +10,7 @@
 07/09 Add OtherProducts component in main-content
       Finish OtherProducts RWD
       Finish Brands RWD
+07/13 Finish footer component layout
 
 ## Project setup
 ```
