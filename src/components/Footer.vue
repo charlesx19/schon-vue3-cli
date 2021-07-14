@@ -1,9 +1,9 @@
 <template>
-  <div id="footer">
+  <div id="footer" class="d-none d-md-block">
     <div id="footer-top" class="container-fluid">
       <div class="container">
         <div class="row features">
-          <div class=" item">
+          <div class="item">
             <div class="row no-gutters">
               <div class="col-2 icon">
                 <i class="fas fa-plane"></i>
@@ -16,7 +16,7 @@
               </div>
             </div>
           </div>
-          <div class=" item">
+          <div class="item">
             <div class="row no-gutters">
               <div class="col-2 icon">
                 <i class="far fa-life-ring"></i>
@@ -29,7 +29,7 @@
               </div>
             </div>
           </div>          
-          <div class=" item">
+          <div class="item">
             <div class="row no-gutters">
               <div class="col-2 icon">
                 <i class="fas fa-box-open"></i>
@@ -42,7 +42,7 @@
               </div>
             </div>
           </div>
-          <div class=" item">
+          <div class="item">
             <div class="row no-gutters">
               <div class="col-2 icon">
                 <i class="far fa-money-bill-alt"></i>
@@ -179,6 +179,13 @@
       </div>
     </div>
   </div>
+  <div id="footerMobile" class="row no-gutters d-md-none d-flex">
+    <div class="col-12">
+      <div class="logo">
+        <img src="@/img/logo_gray.svg" alt="">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -230,6 +237,27 @@ export default {
           &:nth-child(1) {
             svg {
               transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        .features {
+          padding-bottom: 0;
+          flex-wrap: wrap;
+          .item {
+            margin-bottom: 2rem;
+            width: 50%;
+          }
+        }
+      }
+      @media (max-width: 539px) {
+        .features {
+          padding-left: 3rem;
+          .item {
+            margin-bottom: 2rem;
+            width: 100%;
+            .row {
             }
           }
         }
@@ -332,6 +360,7 @@ export default {
     }
     #footer-bottom {
       padding: 1.5rem 0;
+      overflow: hidden;
       .logo {
         display: flex;
         justify-content: flex-start;
@@ -359,5 +388,15 @@ export default {
     }
   }
 
+  #footerMobile {
+    padding: 1rem 0;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    background: @main-gray;
+    img {
+      width: 20vw;
+      height: auto;
+    }
+  }
 
 </style>

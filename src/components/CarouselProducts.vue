@@ -233,7 +233,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 featuredProductsMobile items " v-show="featured">
+    <div class="col-12 featuredProductsMobile items" v-show="featured">
       <div id="featuredCarouselMobile" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner">
           <div class="carousel-item" v-for="item in carouselProducts.featuredRow01" :key="item['name']">

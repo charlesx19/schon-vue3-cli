@@ -11,6 +11,7 @@
       Finish OtherProducts RWD
       Finish Brands RWD
 07/13 Finish footer component layout
+07/14 Finish footer RWD
 
 ## Project setup
 ```

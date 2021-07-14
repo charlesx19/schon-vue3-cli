@@ -34,7 +34,7 @@ export default {
 <style lang="less">
   @import '@/less/main.less';
   #main-content {
-    padding-bottom: 100px;
+    padding-bottom: 3rem;
   }
 
 
