@@ -1,4 +1,10 @@
 # schon-vue
+
+使用vue3撰寫的購物網站練習，
+每個分頁拆開成SFC撰寫，並利用vue-router換頁，
+因為使用vuex儲存全域資料，
+所以在A分頁修改購物車清單，B分頁也會同步修改。
+
 `
 06/16 Finish mainPromote component in main-content
 06/21 Finish mainPromote RWD<br>
